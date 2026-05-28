@@ -1,0 +1,250 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Apr 28 13:47:46 2026
+| Host         : LAPTOP-83VN1A9G running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7s50
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   172 |
+|    Minimum number of control sets                        |   172 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   214 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   172 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |    18 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |    47 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    98 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              23 |           12 |
+| No           | No                    | Yes                    |             764 |          328 |
+| No           | Yes                   | No                     |              12 |            6 |
+| Yes          | No                    | No                     |             696 |          229 |
+| Yes          | No                    | Yes                    |            3123 |         1538 |
+| Yes          | Yes                   | No                     |             168 |           48 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+-------------------------------------------------------------------------+------------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                              Enable Signal                              |                         Set/Reset Signal                         | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+-------------------------------------------------------------------------+------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/spi_ssr_value_q0                       | u_mem/rst_sys_w                                                  |                1 |              1 |         1.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/spi_mosi_q3_out                       | u_mem/rst_sys_w                                                  |                1 |              1 |         1.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/count_q[3]_i_1__0_n_0                             | u_mem/rst_sys_w                                                  |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[20]_1                     | u_top/u_dbg/rst_cpu_w                                            |                3 |              4 |         1.33 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/csr_mpriv_q_reg[1]_4                 | u_top/u_dbg/rst_cpu_w                                            |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_uart/tx_bits_q[3]_i_1_n_0                           | u_mem/rst_sys_w                                                  |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_uart/tx_bits_q[3]_i_1__0_n_0                              | u_mem/rst_sys_w                                                  |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_uart/rx_bits_q[3]_i_1__0_n_0                              | u_mem/rst_sys_w                                                  |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_lsu/E[0]                                    | u_top/u_dbg/rst_cpu_w                                            |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/FSM_onehot_state_q_reg[6][0]                      | u_mem/rst_sys_w                                                  |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/count_q[3]_i_1_n_0                                | u_mem/rst_sys_w                                                  |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_arb/E[0]                                    | u_top/u_dbg/rst_cpu_w                                            |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_axi_tap/write_pending_q[3]_i_1_n_0                  | u_mem/rst_sys_w                                                  |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_axi_tap/read_pending_q[3]_i_1_n_0                   | u_mem/rst_sys_w                                                  |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_intc/irq_enable_q[3]_i_1_n_0                        | u_mem/rst_sys_w                                                  |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_uart/rx_bits_q[3]_i_1_n_0                           | u_mem/rst_sys_w                                                  |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/csr_mpriv_q_reg[1]_5[0]              | u_top/u_dbg/rst_cpu_w                                            |                3 |              5 |         1.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/csr_mpriv_q_reg[1]_1[0]              | u_top/u_dbg/rst_cpu_w                                            |                3 |              5 |         1.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/rvalid_q_reg_2[0]                | u_mem/rst_sys_w                                                  |                2 |              5 |         2.50 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/E[0]                                 | u_top/u_dbg/rst_cpu_w                                            |                2 |              5 |         2.50 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[22]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |                2 |              6 |         3.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/E[0]                                  | u_mem/rst_sys_w                                                  |                3 |              6 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/active_q_reg                          | u_mem/rst_sys_w                                                  |                2 |              7 |         3.50 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[3][7]_i_1__3_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[2][7]_i_1__2_n_0                            |                                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[0][7]_i_1__2_n_0                            |                                                                  |                4 |              8 |         2.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[1][7]_i_1__2_n_0                            |                                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[7][7]_i_1_n_0                               |                                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[5][7]_i_1__0_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[4][7]_i_1__0_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/data_idx_q_reg[1][0]                              | u_mem/rst_sys_w                                                  |                4 |              8 |         2.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/data_idx_q_reg[1][1]                              | u_mem/rst_sys_w                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/data_idx_q_reg[1][2]                              | u_mem/rst_sys_w                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/data_idx_q_reg[1][3]                              | u_mem/rst_sys_w                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_uart/rx_shift_reg_q                                 | u_mem/rst_sys_w                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_mem/rd_last0_out                                                      | u_top/u_soc/u_soc/u_retime/u_read_req/FSM_onehot_rd_state_reg[2] |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_mem/rst_sys_w                                                         |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/mem_busy_q_reg[0]                                 | u_mem/rst_sys_w                                                  |                5 |              8 |         1.60 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[2][7]_i_1__1_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[0][7]_i_1__1_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[1][7]_i_1__1_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[4][7]_i_1_n_0                               |                                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[5][7]_i_1_n_0                               |                                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[3][7]_i_1__2_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_tx/ram_q[6][7]_i_1_n_0                               |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/E[1]                                              | u_mem/rst_sys_w                                                  |                4 |              8 |         2.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_uart/rx_shift_reg_q[7]_i_1__0_n_0                         | u_mem/rst_sys_w                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_uart/rx_data_q                                            | u_mem/rst_sys_w                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_uart/tx_shift_reg_q[7]_i_1__0_n_0                         | u_mem/rst_sys_w                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/spi_cr_wr_q0                           | u_mem/rst_sys_w                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/rvalid_q_reg[0]                  | u_mem/rst_sys_w                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_resp/wr_ptr_q_reg[1]_2              | u_top/u_soc/u_core/u_core/u_arb/mem_req_q_reg_2                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_resp/wr_ptr_q_reg[0]_0              | u_top/u_soc/u_core/u_core/u_arb/mem_req_q_reg_1                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_resp/wr_ptr_q_reg[1]_1              | u_top/u_soc/u_core/u_core/u_arb/mem_req_q_reg_0                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_resp/wr_ptr_q_reg[1]_0              | u_top/u_soc/u_core/u_core/u_arb/mem_req_q_reg                    |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[7][7]_i_1__0_n_0                            |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_rx_fifo/ram_q[1][7]_i_1__0_n_0                |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_rx_fifo/ram_q[3][7]_i_1__1_n_0                |                                                                  |                4 |              8 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_rx_fifo/ram_q[0][7]_i_1__0_n_0                |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/ram_q[6][7]_i_1__0_n_0                            |                                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/ram_q[1][7]_i_1_n_0                   |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/ram_q[2][7]_i_1_n_0                   |                                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/ram_q[3][7]_i_1__0_n_0                |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_tx_fifo/ram_q[0][7]_i_1_n_0                   |                                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/E[0]                                              | u_mem/rst_sys_w                                                  |                4 |              8 |         2.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/E[3]                                              | u_mem/rst_sys_w                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_uart/tx_shift_reg_q[7]_i_1_n_0                      | u_mem/rst_sys_w                                                  |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_top/u_dbg/u_fifo_rx/E[2]                                              | u_mem/rst_sys_w                                                  |                4 |              8 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_uart/rx_data_q[7]_i_1__0_n_0                        | u_mem/rst_sys_w                                                  |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_spi/u_rx_fifo/ram_q[2][7]_i_1__0_n_0                |                                                                  |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/FSM_sequential_state_q_reg[1][0] | u_top/u_dbg/rst_cpu_w                                            |                4 |             11 |         2.75 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/rvalid_q_reg_5[0]                | u_mem/rst_sys_w                                                  |                6 |             11 |         1.83 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_mmu/dtlb_hit_w3                             | u_top/u_dbg/rst_cpu_w                                            |                5 |             12 |         2.40 |
+|  clk_w_BUFG  | u_top/u_dbg/FSM_onehot_state_q[11]_i_1_n_0                              | u_mem/rst_sys_w                                                  |                6 |             12 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_write_cmd_req/ram_q[0][30]_i_1_n_0         |                                                                  |                7 |             16 |         2.29 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_write_cmd_req/ram_q[1][30]_i_1_n_0         |                                                                  |                7 |             16 |         2.29 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[25]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               10 |             16 |         1.60 |
+|  clk_w_BUFG  | u_mem/wr_addr[16]_i_1_n_0                                               |                                                                  |                6 |             16 |         2.67 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[30]_5[0]                  | u_top/u_dbg/rst_cpu_w                                            |                8 |             16 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_req/ram_q[1][30]_i_1__0_n_0           |                                                                  |                8 |             17 |         2.12 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_req/ram_q[0][30]_i_1__0_n_0           |                                                                  |                8 |             17 |         2.12 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_mmu/pte_addr_q113_out                       | u_top/u_dbg/rst_cpu_w                                            |                8 |             21 |         2.62 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_mmu/pte_addr_q[31]_i_1_n_0                  | u_top/u_dbg/rst_cpu_w                                            |                8 |             23 |         2.88 |
+|  clk_w_BUFG  |                                                                         |                                                                  |               12 |             23 |         1.92 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_mmu/pte_entry_q                             | u_top/u_dbg/rst_cpu_w                                            |                6 |             24 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/opcode_instr_q_reg[35]_1             | u_top/u_dbg/rst_cpu_w                                            |               13 |             25 |         1.92 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[2][68]_i_1_n_0            |                                                                  |                7 |             28 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[3][68]_i_1_n_0            |                                                                  |                9 |             28 |         3.11 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[1][68]_i_1_n_0            |                                                                  |                9 |             28 |         3.11 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[0][68]_i_1_n_0            |                                                                  |                9 |             28 |         3.11 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_csr/itlb_valid_q_reg[0]                     | u_top/u_dbg/rst_cpu_w                                            |               13 |             30 |         2.31 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_4[0]                  | u_top/u_dbg/rst_cpu_w                                            |               21 |             32 |         1.52 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               24 |             32 |         1.33 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |               16 |             32 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |               21 |             32 |         1.52 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_3[0]                  | u_top/u_dbg/rst_cpu_w                                            |               22 |             32 |         1.45 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[1]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |               25 |             32 |         1.28 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[4]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_2[0]                  | u_top/u_dbg/rst_cpu_w                                            |               18 |             32 |         1.78 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_6[0]                  | u_top/u_dbg/rst_cpu_w                                            |               18 |             32 |         1.78 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_2[0]                  | u_top/u_dbg/rst_cpu_w                                            |               18 |             32 |         1.78 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_6[0]                  | u_top/u_dbg/rst_cpu_w                                            |               27 |             32 |         1.19 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_8[0]                  | u_top/u_dbg/rst_cpu_w                                            |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_7[0]                  | u_top/u_dbg/rst_cpu_w                                            |               22 |             32 |         1.45 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_3[0]                  | u_top/u_dbg/rst_cpu_w                                            |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_5[0]                  | u_top/u_dbg/rst_cpu_w                                            |               25 |             32 |         1.28 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_4[0]                  | u_top/u_dbg/rst_cpu_w                                            |               19 |             32 |         1.68 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_6[0]                  | u_top/u_dbg/rst_cpu_w                                            |               22 |             32 |         1.45 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               16 |             32 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[3]_7[0]                  | u_top/u_dbg/rst_cpu_w                                            |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[4]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |               25 |             32 |         1.28 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_5[0]                  | u_top/u_dbg/rst_cpu_w                                            |               24 |             32 |         1.33 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_4[0]                  | u_top/u_dbg/rst_cpu_w                                            |               25 |             32 |         1.28 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[1]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               18 |             32 |         1.78 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_5[0]                  | u_top/u_dbg/rst_cpu_w                                            |               16 |             32 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[4]_3[0]                  | u_top/u_dbg/rst_cpu_w                                            |               24 |             32 |         1.33 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[2]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[4]_2[0]                  | u_top/u_dbg/rst_cpu_w                                            |               19 |             32 |         1.68 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/rvalid_q_reg_4[0]                | u_mem/rst_sys_w                                                  |               23 |             32 |         1.39 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/rvalid_q_reg_3[0]                | u_mem/rst_sys_w                                                  |               16 |             32 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/E[0]                                   | u_mem/rst_sys_w                                                  |               11 |             32 |         2.91 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_2[0]                      | u_mem/rst_sys_w                                                  |                9 |             32 |         3.56 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_3[0]                      | u_mem/rst_sys_w                                                  |               27 |             32 |         1.19 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_4[0]                      | u_mem/rst_sys_w                                                  |               24 |             32 |         1.33 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_5[0]                      | u_mem/rst_sys_w                                                  |               23 |             32 |         1.39 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_6[0]                      | u_mem/rst_sys_w                                                  |               25 |             32 |         1.28 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_7[0]                      | u_mem/rst_sys_w                                                  |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_0[0]                      | u_mem/rst_sys_w                                                  |               10 |             32 |         3.20 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/mem_addr_q_reg[3]_2[0]                 | u_mem/rst_sys_w                                                  |                7 |             32 |         4.57 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/mem_addr_q_reg[3]_0[0]                 | u_mem/rst_sys_w                                                  |               22 |             32 |         1.45 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/mem_addr_q_reg[3]_1[0]                 | u_mem/rst_sys_w                                                  |                9 |             32 |         3.56 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/mem_addr_q_reg[4]_0[0]                 | u_mem/rst_sys_w                                                  |               19 |             32 |         1.68 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/mem_addr_q_reg[4]_1[0]                 | u_mem/rst_sys_w                                                  |               28 |             32 |         1.14 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[0][68]_i_1_n_0            | u_top/u_soc/u_core/u_core/u_arb/wr_ptr_q_reg[1]_0                |               10 |             32 |         3.20 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/E[0]                             | u_mem/rst_sys_w                                                  |               17 |             32 |         1.88 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[1][68]_i_1_n_0            | u_top/u_soc/u_core/u_core/u_arb/wr_ptr_q_reg[0]                  |                8 |             32 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[3][68]_i_1_n_0            | u_top/u_soc/u_core/u_core/u_arb/wr_ptr_q_reg[1]_1                |                9 |             32 |         3.56 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_arb/u_wr_arb/bvalid_q_reg_1[0]                      | u_mem/rst_sys_w                                                  |               10 |             32 |         3.20 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_req/ram_q[2][68]_i_1_n_0            | u_top/u_soc/u_core/u_core/u_arb/wr_ptr_q_reg[1]                  |               11 |             32 |         2.91 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_csr/E[0]                                    | u_top/u_dbg/rst_cpu_w                                            |                9 |             32 |         3.56 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/csr_mpriv_q_reg[1]_3[0]              | u_top/u_dbg/rst_cpu_w                                            |               15 |             32 |         2.13 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/csr_mpriv_q_reg[1]_0[0]              | u_top/u_dbg/rst_cpu_w                                            |               14 |             32 |         2.29 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[26]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               16 |             32 |         2.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[22]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               19 |             32 |         1.68 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[21]_2[0]                  | u_top/u_dbg/rst_cpu_w                                            |               21 |             32 |         1.52 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[21]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |               15 |             32 |         2.13 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/inst_q_reg[20]_0[0]                  | u_top/u_dbg/rst_cpu_w                                            |               19 |             32 |         1.68 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/u_regfile/E[0]                       | u_top/u_dbg/rst_cpu_w                                            |               13 |             32 |         2.46 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_csr/sel                                     | u_top/u_dbg/rst_cpu_w                                            |                9 |             32 |         3.56 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/csr_mpriv_q_reg[1]_2[0]              | u_top/u_dbg/rst_cpu_w                                            |               15 |             32 |         2.13 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_dport_bridge/u_resp/writeback_idx_q_reg[1][0]      | u_top/u_dbg/rst_cpu_w                                            |               28 |             32 |         1.14 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_timer/timer0_value_q[0]_i_1_n_0                     | u_mem/rst_sys_w                                                  |                8 |             32 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_timer/timer1_value_q[0]_i_1_n_0                     | u_mem/rst_sys_w                                                  |                8 |             32 |         4.00 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_1[0]                  | u_top/u_dbg/rst_cpu_w                                            |               24 |             32 |         1.33 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_2[0]                  | u_top/u_dbg/rst_cpu_w                                            |               15 |             32 |         2.13 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/wb_rd_q_reg[0]_3[0]                  | u_top/u_dbg/rst_cpu_w                                            |               20 |             32 |         1.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/ram_q[0][38]_i_1_n_0             |                                                                  |               13 |             35 |         2.69 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_read_resp/ram_q[1][38]_i_1_n_0             |                                                                  |               14 |             35 |         2.50 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_write_data_req/ram_q[0][35]_i_1_n_0        |                                                                  |               13 |             36 |         2.77 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_mmu/dtlb_valid_q0                           | u_top/u_dbg/rst_cpu_w                                            |               10 |             36 |         3.60 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_retime/u_write_data_req/ram_q[1][35]_i_1_n_0        |                                                                  |               11 |             36 |         3.27 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_mmu/itlb_valid_q0                           | u_top/u_dbg/rst_cpu_w                                            |               11 |             42 |         3.82 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/quotient_q                           | u_top/u_dbg/rst_cpu_w                                            |               16 |             64 |         4.00 |
+|  clk_w_BUFG  | u_mem/rd_last0_out                                                      |                                                                  |               23 |             68 |         2.96 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_lsu/mem_unaligned_st_q_reg_1[0]             | u_top/u_dbg/rst_cpu_w                                            |               47 |             69 |         1.47 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_lsu/mem_wr_q[3]_i_1_n_0                     | u_top/u_dbg/rst_cpu_w                                            |               26 |             82 |         3.15 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_decode/u_regfile/mem_rd_q_reg               | u_top/u_dbg/rst_cpu_w                                            |               32 |             89 |         2.78 |
+|  clk_w_BUFG  | u_mem/count_q3                                                          |                                                                  |               29 |             92 |         3.17 |
+|  clk_w_BUFG  | u_top/u_soc/u_core/u_core/u_muldiv/q_mask_q                             | u_top/u_dbg/rst_cpu_w                                            |               21 |             95 |         4.52 |
+|  clk_w_BUFG  | u_top/u_soc/u_soc/u_counter/E[0]                                        | u_mem/rst_sys_w                                                  |               66 |            260 |         3.94 |
+|  clk_w_BUFG  |                                                                         | u_top/u_dbg/rst_cpu_w                                            |              196 |            372 |         1.90 |
+|  clk_w_BUFG  |                                                                         | u_mem/rst_sys_w                                                  |              138 |            404 |         2.93 |
++--------------+-------------------------------------------------------------------------+------------------------------------------------------------------+------------------+----------------+--------------+
+
+
