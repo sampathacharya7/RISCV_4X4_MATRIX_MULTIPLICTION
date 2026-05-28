@@ -1,0 +1,28 @@
+Installing Docker on WSL (Ubuntu)
+Follow the steps below to install and verify Docker inside your WSL environment:
+Step 1: Update and Install Docker
+Open your WSL terminal and run the following commands one by one. When prompted for a password, type it carefully (it will not be visible as you type).
+sudo apt update 
+sudo apt  install  docker.io -y
+sudo systemctl enable docker sudo systemctl start docker
+sudo usermod -aG docker $USER
+ 
+
+Step 2: Apply User Permissions
+After running the above commands, close and reopen your Ubuntu /WSL terminal (or restart your WSL session) to apply the Docker group changes.
+ 
+
+
+Step 1: Allow Docker to Access Display
+Before running GUI-based applications from Docker, grant permission for Docker to access your X server: 
+sudo apt install x11-xserver-utils 
+xhost +local:root
+Step 2: Pull and Run the Docker Image
+Pull the Image
+sudo docker pull ttusharshenoy/riscv:latest
+Run the following command in your WSL or Ubuntu terminal:
+sudo docker run -it \
+  -e DISPLAY=$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  ttusharshenoy/riscv:latest
+
