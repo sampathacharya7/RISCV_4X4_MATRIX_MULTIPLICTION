@@ -1,0 +1,80 @@
+/home/sampath/riscv_soc/fpga/boolean/run/console-uart.py -t uart -d /dev/ttyUSB1 -b 1000000 -f main.elf
+================================================
+  4x4 Matrix Multiplier Accelerator Tests
+  RISC-V SoC @ Boolean Board (25 MHz)
+  Peripheral base: 0x95000000
+  Input: 8-bit unsigned  Output: 16-bit unsigned
+================================================
+
+[Test 1] Identity x Data  (expect result = B)
+  B (expected):
+    [ 05 06 07 08 ]
+    [ 01 02 03 04 ]
+    [ 09 0A 0B 0C ]
+    [ 0D 0E 0F 10 ]
+  HW result:
+    [     5     6     7     8 ]
+    [     1     2     3     4 ]
+    [     9    10    11    12 ]
+    [    13    14    15    16 ]
+  --> PASS
+
+[Test 2] Zero x Data  (expect all zeros)
+  HW result:
+    [     0     0     0     0 ]
+    [     0     0     0     0 ]
+    [     0     0     0     0 ]
+    [     0     0     0     0 ]
+  --> PASS
+
+[Test 3] Data x Identity  (expect result = A)
+  A:
+    [ 01 02 03 04 ]
+    [ 05 06 07 08 ]
+    [ 09 0A 0B 0C ]
+    [ 0D 0E 0F 10 ]
+  HW result:
+    [     1     2     3     4 ]
+    [     5     6     7     8 ]
+    [     9    10    11    12 ]
+    [    13    14    15    16 ]
+  --> PASS
+
+[Test 4] Diagonal x Ones
+  Expect row0=[1,1,1,1] row1=[2,2,2,2] row2=[3,3,3,3] row3=[4,4,4,4]
+  HW result:
+    [     1     1     1     1 ]
+    [     2     2     2     2 ]
+    [     3     3     3     3 ]
+    [     4     4     4     4 ]
+  --> PASS
+
+[Test 5] Known numeric result (HW vs SW reference)
+  SW reference:
+    [    25    61    24    57 ]
+    [    86   123    46   152 ]
+    [    98    99    60   129 ]
+    [    77   191    64   188 ]
+  HW result:
+    [    25    61    24    57 ]
+    [    86   123    46   152 ]
+    [    98    99    60   129 ]
+    [    77   191    64   188 ]
+  --> PASS
+
+[Test 6] Register readback (write A rows, read back)
+  ROW0 wrote=0x12EFCDAB  read=0x12EFCDAB  PASS
+  ROW1 wrote=0x9A785634  read=0x9A785634  PASS
+
+[Test 7] Stress - same multiply x10 (stability)
+  Last HW result:
+    [    25    61    24    57 ]
+    [    86   123    46   152 ]
+    [    98    99    60   129 ]
+    [    77   191    64   188 ]
+  --> PASS (all 10 runs match SW)
+
+================================================
+  All tests complete.
+================================================
+
