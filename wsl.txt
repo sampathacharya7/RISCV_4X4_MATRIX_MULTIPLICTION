@@ -1,0 +1,21 @@
+sampath@LAPTOP-83VN1A9G:~$ /home/sampath
+-bash: /home/sampath: Is a directory
+sampath@LAPTOP-83VN1A9G:~$ pwd
+/home/sampath
+sampath@LAPTOP-83VN1A9G:~$ ls
+To  ai_env  hello.c  hello.elf  install.cmd  linker.ld  riscv_soc  riscv_soc.zip  start.S  train_model.py  yolovenv
+sampath@LAPTOP-83VN1A9G:~$ cd riscv_soc/
+sampath@LAPTOP-83VN1A9G:~/riscv_soc$ ls
+README.md  core  doc  dts  fpga  images  soc  tb
+sampath@LAPTOP-83VN1A9G:~/riscv_soc$ cd fpga/
+sampath@LAPTOP-83VN1A9G:~/riscv_soc/fpga$ ls
+boolean
+sampath@LAPTOP-83VN1A9G:~/riscv_soc/fpga$ cd boolean/
+sampath@LAPTOP-83VN1A9G:~/riscv_soc/fpga/boolean$ ls
+Constraints.ucf  counter.elf        hello.elf       matrix_multiplier_simple.c    project.runs  top.bit
+artix7_pll.v     dbg_bridge.v       ip              matrix_multiplier_simple.elf  project.srcs  top.v
+arty_ddr.v       dbg_bridge_fifo.v  ip_upgrade.log  program.tcl                   project.xpr   vivado.jou
+arty_revb.xdc    dbg_bridge_uart.v  linker.ld       project.cache                 run           vivado.log
+axi4_cdc.v       fpga_top.v         main.c          project.hw                    run.py
+counter.c        hello.c            main.elf        project.ip_user_files         start.S
+sampath@LAPTOP-83VN1A9G:~/riscv_soc/fpga/boolean$ cat >main.c
