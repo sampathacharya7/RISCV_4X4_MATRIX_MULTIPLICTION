@@ -1,0 +1,18 @@
+Step 1 — Install usbipd on Windows (run in Windows PowerShell as Admin):
+winget install usbipd
+
+Step 2 — Install usbip tools inside WSL: move to step3
+sudo apt install linux-tools-generic hwdata
+sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/*-generic/usbip 20
+
+Step 3 — List USB devices (Windows PowerShell as Admin):
+usbipd list
+
+You'll see something like:
+BUSID  VID:PID    DEVICE
+2-3    0403:6010  USB Serial Converter  ← your FPGA/programmer
+
+Step 4 — Attach the device to WSL (Windows PowerShell as Admin):
+usbipd bind --busid 1-2
+usbipd attach --wsl --busid 1-2
+
