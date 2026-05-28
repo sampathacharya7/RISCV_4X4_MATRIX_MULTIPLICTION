@@ -2,23 +2,6 @@
 
 A specialized hardware accelerator for 4×4 matrix multiplication implemented on the **Boolean Board** FPGA with a RISC-V SoC architecture. This project demonstrates efficient matrix computation through custom hardware acceleration, perfect for embedded systems and IoT applications requiring fast numerical processing.
 
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Hardware Architecture](#hardware-architecture)
-- [Project Structure](#project-structure)
-- [Installation & Setup](#installation--setup)
-- [Usage Guide](#usage-guide)
-- [Testing & Verification](#testing--verification)
-- [Technical Specifications](#technical-specifications)
-- [Results](#results)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-
----
 
 ## 🎯 Overview
 
@@ -46,21 +29,6 @@ This project implements a **4×4 matrix multiplier accelerator** as a peripheral
 | **Base Address** | 0x95000000 |
 | **Verification** | Full software reference comparison |
 
----
-
-## 🏗️ Hardware Architecture
-
-### System Block Diagram
-
-```
-┌─────────────────────────────────────────────────────┐
-│                 RISC-V CPU (rv32im)                 │
-├─────────────────────────────────────────────────────┤
-│                    AXI-4 Bus                        │
-├─────────────────────────────────────────────────────┤
-│  UART (0x92000000)  │  Matrix Multiplier (0x95000000)  │
-└─────────────────────────────────────────────────────┘
-```
 
 ### Matrix Multiplier Peripheral Registers
 
@@ -282,7 +250,6 @@ Expected:      ✓ Matches B exactly
 Status: ✅ PASS
 HW Result:     [0 0 0 0] [0 0 0 0] [0 0 0 0] [0 0 0 0]
 Expected:      ✓ All zeros
-```
 
 ### Test 3: Data × Identity Verification
 **Test**: Data × Identity = Data
@@ -417,63 +384,15 @@ This project covers essential topics in embedded systems:
 - **Development Tools**: GCC toolchain, linkers, loaders, serial communication
 - **Performance Optimization**: Hardware acceleration techniques
 
----
+##  Highlights
 
-## 🤝 Contributing
+-  **Proven Hardware**: Successfully tested on Boolean Board FPGA
+-  **Comprehensive Testing**: 7 test cases covering edge cases and stress scenarios
+-  **Well-Documented**: Complete documentation, code comments, and guides
+-  **Production-Ready**: Stable, reliable, and verified implementation
+-  **Educational**: Perfect for learning FPGA + RISC-V + Hardware Design
 
-This project is open for collaboration and improvements! Possible extensions:
 
-- **Larger matrices**: 8×8 or 16×16 implementations
-- **Floating-point support**: FP32 or FP64 data types
-- **Optimizations**: Pipelined architecture, parallel processing
-- **Additional accelerators**: FFT, convolution, other DSP operations
-- **Better documentation**: More examples, tutorials, performance benchmarks
-
-Contributions are welcome! Please open issues for bugs or feature requests.
-
----
-
-## 📄 License
-
-This project is provided as educational material. Check individual files for specific licensing information.
-
----
-
-## 👤 Author
-
-**Sampath Acharya**  
-Project: RISC-V 4×4 Matrix Multiplier Accelerator  
-Repository: [sampathacharya7/RISCV_4X4_MATRIX_MULTIPLICTION](https://github.com/sampathacharya7/RISCV_4X4_MATRIX_MULTIPLICTION)
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-1. Check existing GitHub issues
-2. Review the documentation files
-3. Consult the technical report (final_riscv.pdf)
-4. Open a new GitHub issue with detailed information
-
----
-
-## 🏆 Highlights
-
-- ✅ **Proven Hardware**: Successfully tested on Boolean Board FPGA
-- ✅ **Comprehensive Testing**: 7 test cases covering edge cases and stress scenarios
-- ✅ **Well-Documented**: Complete documentation, code comments, and guides
-- ✅ **Production-Ready**: Stable, reliable, and verified implementation
-- ✅ **Educational**: Perfect for learning FPGA + RISC-V + Hardware Design
-
----
-
-**Last Updated**: May 2026  
-**Status**: ✅ Fully Functional & Tested
-
-```
-================================================
   4x4 Matrix Multiplier Accelerator Tests
   RISC-V SoC @ Boolean Board (25 MHz)
-  All tests complete. ✅
-================================================
-```
+  All tests complete. 
