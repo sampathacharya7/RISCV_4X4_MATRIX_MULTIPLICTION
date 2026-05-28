@@ -1,9 +1,9 @@
-# 🚀 RISC-V 4×4 Matrix Multiplier Accelerator
+#  RISC-V 4×4 Matrix Multiplier Accelerator
 
 A specialized hardware accelerator for 4×4 matrix multiplication implemented on the **Boolean Board** FPGA with a RISC-V SoC architecture. This project demonstrates efficient matrix computation through custom hardware acceleration, perfect for embedded systems and IoT applications requiring fast numerical processing.
 
 
-## 🎯 Overview
+##  Overview
 
 This project implements a **4×4 matrix multiplier accelerator** as a peripheral in a RISC-V SoC running on an FPGA. Instead of relying on the CPU alone to perform matrix multiplication, we've designed dedicated hardware that can compute the product of two 4×4 matrices in parallel, providing significant performance gains for matrix-intensive applications.
 
@@ -16,7 +16,7 @@ This project implements a **4×4 matrix multiplier accelerator** as a peripheral
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 | Feature | Details |
 |---------|---------|
